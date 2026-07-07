@@ -116,11 +116,12 @@
     }
 
     .nav {
-      @apply min-h-0 flex items-center justify-between gap-7;
-      width: min(calc(100% - 50px), 1230px);
-      min-height: 88px;
+      @apply min-h-0 flex items-center justify-between;
+      width: min(calc(100% - 90px), 1230px);
+      min-height: 94px;
       margin: 0 auto;
       padding: 0;
+      gap: 48px;
       background: transparent;
       border: 0;
       border-radius: 0;
@@ -148,19 +149,20 @@
 
     .brand-copy {
       display: grid;
-      line-height: 1.05;
+      line-height: 1;
     }
 
     .site-header .brand {
-      font-size: 0.76rem;
+      font-size: 1.03rem;
+      letter-spacing: -0.035em;
     }
 
     .brand-copy small {
       margin-top: 5px;
       color: #737684;
-      font-size: 0.48rem;
+      font-size: 0.6rem;
       font-weight: 600;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.055em;
       text-transform: uppercase;
     }
 
@@ -189,8 +191,9 @@
 
     .nav-links {
       @apply ml-auto flex items-center justify-center;
-      gap: 28px;
-      font-size: 0.68rem;
+      gap: clamp(34px, 3.7vw, 54px);
+      font-size: 0.87rem;
+      font-weight: 600;
       color: #434756;
     }
 
@@ -204,12 +207,13 @@
     }
 
     .site-header .btn {
-      height: 34px;
-      min-height: 34px;
-      margin-right: -12px;
-      padding-inline: 12px;
+      height: 36px;
+      min-height: 36px;
+      margin-right: 0;
+      padding-inline: 18px;
       border-radius: 5px;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
+      gap: 16px;
     }
 
     .btn {
@@ -287,16 +291,21 @@
     }
 
     .eyebrow {
-      @apply inline-flex w-fit items-center rounded-full border font-extrabold uppercase;
-      gap: 9px;
+      @apply inline-flex w-fit items-center rounded-full border font-semibold uppercase;
+      gap: 8px;
       margin-bottom: 24px;
-      padding: 8px 12px;
-      border: 1px solid rgba(104, 111, 142, 0.16);
-      color: #5d6273;
-      background: rgba(255, 255, 255, 0.56);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
+      padding: 7px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.46);
+      color: rgba(65, 70, 88, 0.86);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.26));
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        0 10px 28px rgba(31, 34, 54, 0.045);
+      backdrop-filter: blur(16px) saturate(1.18);
+      -webkit-backdrop-filter: blur(16px) saturate(1.18);
+      font-size: 0.68rem;
+      letter-spacing: 0.045em;
     }
 
     .hero .eyebrow {
@@ -313,11 +322,13 @@
     }
 
     .eyebrow-dot {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--violet));
-      box-shadow: 0 0 0 5px rgba(113, 121, 255, 0.08);
+      background: rgba(118, 108, 255, 0.72);
+      box-shadow:
+        0 0 0 4px rgba(118, 108, 255, 0.08),
+        0 0 14px rgba(118, 108, 255, 0.16);
     }
 
     .hero h1 {
@@ -1022,13 +1033,34 @@
     }
 
     .project-badge {
-      @apply inline-flex h-auto rounded-full border font-extrabold uppercase;
+      @apply inline-flex h-auto rounded-full border font-semibold uppercase;
+      min-height: 0;
       padding: 7px 10px;
-      background: rgba(255, 255, 255, 0.68);
-      border: 1px solid rgba(48, 53, 76, 0.08);
-      color: #7c6ddd;
-      font-size: 0.68rem;
-      letter-spacing: 0.06em;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      color: rgba(89, 79, 190, 0.82);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.24));
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.78),
+        0 10px 26px rgba(45, 41, 76, 0.045);
+      backdrop-filter: blur(16px) saturate(1.16);
+      -webkit-backdrop-filter: blur(16px) saturate(1.16);
+      font-size: 0.66rem;
+      letter-spacing: 0.05em;
+    }
+
+    .badge {
+      min-height: 0 !important;
+      border: 1px solid rgba(255, 255, 255, 0.48) !important;
+      color: rgba(74, 78, 94, 0.82) !important;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.24)) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.78),
+        0 10px 26px rgba(45, 41, 76, 0.045) !important;
+      backdrop-filter: blur(16px) saturate(1.16);
+      -webkit-backdrop-filter: blur(16px) saturate(1.16);
+      font-weight: 600 !important;
     }
 
     .project-card h3 {
@@ -1290,6 +1322,7 @@
 
     .cta-glow-wave {
       @apply pointer-events-none absolute inset-x-0 bottom-0 z-1 overflow-hidden;
+      bottom: -80px;
       height: 238px;
     }
 
@@ -1627,6 +1660,749 @@
       }
     }
 
+    /* Header principal importado do novo código */
+    .hero-header {
+      position: relative;
+      min-height: 100svh;
+      overflow: hidden;
+      isolation: isolate;
+      padding: 0;
+      background:
+        radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.95), transparent 34%),
+        radial-gradient(circle at 84% 24%, rgba(244, 239, 231, 0.42), transparent 36%),
+        #fbfaf7;
+    }
+
+    .hero-header::before {
+      display: none;
+    }
+
+    .hero-header .ambient-glow {
+      position: absolute;
+      z-index: -2;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(90px);
+      opacity: 0.22;
+    }
+
+    .hero-header .ambient-glow--left {
+      bottom: -265px;
+      left: -120px;
+      background: #749dff;
+    }
+
+    .hero-header .ambient-glow--right {
+      right: -170px;
+      bottom: -240px;
+      background: #ff9b6f;
+    }
+
+    .hero-header .hero-glow-wave {
+      @apply pointer-events-none absolute inset-x-0 bottom-0 z-1 overflow-hidden;
+      height: 238px;
+    }
+
+    .hero-header .hero-glow-wave .glow-dot {
+      filter: blur(25px);
+    }
+
+    .hero-header .hero-glow-wave .d1 { left: -2%; top: 34%; --dot-color: rgba(118, 180, 255, 0.80); --dot-opacity: .54; --dot-rotation: 8deg; }
+    .hero-header .hero-glow-wave .d2 { left: 9%; top: 47%; --dot-color: rgba(112, 157, 255, 0.70); --dot-opacity: .50; --dot-rotation: 7deg; }
+    .hero-header .hero-glow-wave .d3 { left: 21%; top: 58%; --dot-color: rgba(136, 123, 255, 0.66); --dot-opacity: .48; --dot-rotation: 5deg; }
+    .hero-header .hero-glow-wave .d4 { left: 34%; top: 65%; --dot-color: rgba(184, 119, 248, 0.58); --dot-opacity: .45; --dot-rotation: 3deg; }
+    .hero-header .hero-glow-wave .d5 { left: 47%; top: 69%; --dot-color: rgba(229, 124, 210, 0.56); --dot-opacity: .44; --dot-rotation: 0deg; }
+    .hero-header .hero-glow-wave .d6 { left: 60%; top: 67%; --dot-color: rgba(255, 137, 174, 0.56); --dot-opacity: .45; --dot-rotation: -3deg; }
+    .hero-header .hero-glow-wave .d7 { left: 73%; top: 60%; --dot-color: rgba(255, 157, 132, 0.58); --dot-opacity: .47; --dot-rotation: -5deg; }
+    .hero-header .hero-glow-wave .d8 { left: 85%; top: 49%; --dot-color: rgba(255, 187, 96, 0.66); --dot-opacity: .50; --dot-rotation: -7deg; }
+    .hero-header .hero-glow-wave .d9 { left: 98%; top: 34%; --dot-color: rgba(255, 161, 111, 0.74); --dot-opacity: .53; --dot-rotation: -8deg; }
+
+    .hero-header .hero__container {
+      width: min(100%, 1540px);
+      min-height: calc(100svh - 94px);
+      margin: 0 auto;
+      padding: 28px 52px 82px;
+      display: grid;
+      grid-template-columns: minmax(420px, 0.9fr) minmax(550px, 1.04fr);
+      align-items: center;
+      gap: clamp(44px, 6vw, 96px);
+    }
+
+    .hero-header .hero__content {
+      position: relative;
+      z-index: 2;
+      padding-top: 8px;
+    }
+
+    .hero-header .eyebrow {
+      width: fit-content;
+      margin-bottom: 42px;
+      padding: 8px 16px 8px 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(31, 35, 42, 0.04);
+      border-radius: 999px;
+      color: #555a63;
+      background: rgba(242, 240, 236, 0.88);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    .hero-header .eyebrow__dot {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: #171c24;
+      box-shadow: 0 0 0 3px rgba(23, 28, 36, 0.04);
+    }
+
+    .hero-header .hero__title {
+      max-width: 680px;
+      margin: 0;
+      font-size: clamp(48px, 5.15vw, 78px);
+      font-weight: 750;
+      letter-spacing: -0.064em;
+      line-height: 0.99;
+      white-space: normal;
+    }
+
+    .hero-header .hero__title-line {
+      display: block;
+    }
+
+    .hero-header .hero__title-gradient {
+      padding-right: 7px;
+      padding-bottom: 5px;
+      color: transparent;
+      background:
+        linear-gradient(
+          93deg,
+          #5481ff 0%,
+          #7468f4 24%,
+          #c078dd 50%,
+          #ee91b0 72%,
+          #f1b46d 100%
+        );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-header .hero__description {
+      max-width: 580px;
+      margin: 35px 0 0;
+      color: #505762;
+      font-size: clamp(17px, 1.35vw, 21px);
+      font-weight: 400;
+      letter-spacing: -0.027em;
+      line-height: 1.62;
+    }
+
+    .hero-header .hero__actions {
+      margin-top: 45px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .hero-header .button {
+      min-width: 196px;
+      height: 62px;
+      padding: 0 24px 0 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-header .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-header .button--primary {
+      color: #ffffff;
+      border-color: #222a34;
+      background: linear-gradient(135deg, #181d25, #111721 60%, #1d2530);
+      box-shadow:
+        0 11px 24px rgba(17, 23, 33, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.09);
+    }
+
+    .hero-header .button--secondary {
+      color: #292f38;
+      border-color: #dedbd6;
+      background: rgba(255, 255, 255, 0.45);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+    }
+
+    .hero-header .button__icon {
+      width: 20px;
+      height: 20px;
+      transition: transform 180ms ease;
+    }
+
+    .hero-header .button:hover .button__icon {
+      transform: translateX(3px);
+    }
+
+    .hero-header .features {
+      max-width: 650px;
+      margin: 68px 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      list-style: none;
+    }
+
+    .hero-header .feature {
+      min-height: 72px;
+      padding: 0 19px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 13px;
+      border-right: 1px solid #e6e2dd;
+      color: #444b56;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+    }
+
+    .hero-header .feature:first-child {
+      padding-left: 0;
+    }
+
+    .hero-header .feature:last-child {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    .hero-header .feature__icon {
+      width: 25px;
+      height: 25px;
+      color: #5f6a78;
+      stroke-width: 1.65;
+    }
+
+    .hero-header .showcase {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 750px;
+      justify-self: end;
+      padding: 27px 17px 17px;
+      border: 1px solid #dfdcd7;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.69), rgba(253, 252, 249, 0.89));
+      box-shadow:
+        0 21px 55px rgba(71, 62, 53, 0.055),
+        inset 0 1px 0 rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-header .showcase__label {
+      margin: 0 0 32px 10px;
+      color: #656b75;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-header .showcase__top,
+    .hero-header .showcase__bottom {
+      display: grid;
+      grid-template-columns: 202px minmax(0, 1fr);
+      gap: 17px;
+    }
+
+    .hero-header .showcase__bottom {
+      margin-top: 16px;
+    }
+
+    .hero-header .steps {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .hero-header .step {
+      width: 100%;
+      min-height: 96px;
+      padding: 17px 15px;
+      display: grid;
+      grid-template-columns: 27px 1fr;
+      align-items: flex-start;
+      justify-items: start;
+      gap: 13px;
+      border: 1px solid #e6e3df;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.58);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.85),
+        0 3px 12px rgba(31, 27, 23, 0.018);
+      text-align: left;
+    }
+
+    .hero-header .step::before,
+    .hero-header .step::after {
+      display: none;
+      content: none;
+    }
+
+    .hero-header .step__icon {
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      color: #525c69;
+    }
+
+    .hero-header .step__number {
+      margin-bottom: 6px;
+      color: #7b8088;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.045em;
+    }
+
+    .hero-header .step__title {
+      margin-bottom: 5px;
+      color: #333943;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-header .step__text {
+      color: #737984;
+      font-size: 11.25px;
+      line-height: 1.45;
+    }
+
+    .hero-header .browser {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #e3e0dc;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.84);
+      box-shadow:
+        0 18px 50px rgba(32, 28, 24, 0.055),
+        0 3px 10px rgba(32, 28, 24, 0.035);
+    }
+
+    .hero-header .browser__bar {
+      height: 39px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: linear-gradient(90deg, #f7f5f2, #f1ede8, #faf9f7);
+      border-bottom: 1px solid #efedea;
+    }
+
+    .hero-header .browser__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d4d5d7;
+    }
+
+    .hero-header .browser__nav {
+      margin-left: auto;
+      display: flex;
+      gap: 27px;
+    }
+
+    .hero-header .browser__nav span {
+      width: 28px;
+      height: 3px;
+      border-radius: 99px;
+      background: #c7c8ca;
+    }
+
+    .hero-header .browser__content {
+      min-height: 317px;
+      padding: 48px 27px 22px;
+    }
+
+    .hero-header .browser__hero {
+      display: grid;
+      grid-template-columns: 1fr 170px;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .hero-header .browser__heading {
+      max-width: 200px;
+      margin: 0;
+      color: #262d36;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      line-height: 1.04;
+    }
+
+    .hero-header .browser__fake-button {
+      width: 91px;
+      height: 27px;
+      margin-top: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      background: #171d26;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.13);
+    }
+
+    .hero-header .browser__fake-button::after {
+      width: 43px;
+      height: 3px;
+      display: block;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.34);
+      content: "";
+    }
+
+    .hero-header .image-placeholder {
+      position: relative;
+      height: 158px;
+      overflow: hidden;
+      border-radius: 5px;
+      background: linear-gradient(145deg, #f2f1ef, #ecebe9);
+    }
+
+    .hero-header .image-placeholder__sun {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: #dddde0;
+    }
+
+    .hero-header .image-placeholder__mountain,
+    .hero-header .image-placeholder__mountain--small {
+      position: absolute;
+      right: 29px;
+      bottom: 24px;
+      width: 104px;
+      height: 78px;
+      clip-path: polygon(42% 0, 100% 100%, 0 100%);
+      background: #dfe0e2;
+    }
+
+    .hero-header .image-placeholder__mountain--small {
+      right: 8px;
+      width: 79px;
+      height: 57px;
+      background: #d7d8db;
+    }
+
+    .hero-header .browser__benefits {
+      margin-top: 37px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .hero-header .browser-benefit__icon {
+      width: 22px;
+      height: 22px;
+      margin: 0 auto 13px;
+      display: grid;
+      place-items: center;
+      color: #d7dadd;
+      border: 2px solid #e0e2e3;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .hero-header .browser-benefit__line,
+    .hero-header .browser-benefit__line:last-child {
+      width: 55px;
+      max-width: 100%;
+      height: 4px;
+      margin: 0 auto 7px;
+      border-radius: 99px;
+      background: #e7e7e6;
+    }
+
+    .hero-header .browser-benefit__line:last-child {
+      width: 40px;
+      opacity: 0.76;
+    }
+
+    .hero-header .delivery {
+      min-height: 215px;
+      padding: 20px 15px;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      align-content: start;
+      gap: 13px;
+      border: 1px solid #e6e3df;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .hero-header .code-window {
+      position: relative;
+      min-width: 0;
+      min-height: 215px;
+      overflow: hidden;
+      border-radius: 9px;
+      color: #b7bec7;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(67, 88, 106, 0.18), transparent 37%),
+        linear-gradient(145deg, #1b232d, #111720 72%);
+      box-shadow:
+        0 13px 32px rgba(10, 15, 21, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      font-family: "SFMono-Regular", Consolas, monospace;
+    }
+
+    .hero-header .code-window__top {
+      height: 31px;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      color: #9199a5;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.035);
+      font-size: 9px;
+    }
+
+    .hero-header .code-window__status {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #77d9c1;
+      box-shadow: 0 0 8px rgba(119, 217, 193, 0.7);
+    }
+
+    .hero-header .code {
+      margin: 0;
+      padding: 14px 18px 16px 13px;
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 8px;
+      font-size: 9px;
+      line-height: 1.7;
+      white-space: pre;
+    }
+
+    .hero-header .code__numbers {
+      color: #596472;
+      text-align: right;
+      user-select: none;
+    }
+
+    .hero-header .code__content {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .hero-header .code__tag { color: #d78655; }
+    .hero-header .code__attribute { color: #d6bd77; }
+    .hero-header .code__value { color: #85a8bf; }
+    .hero-header .code__text { color: #aab2bd; }
+
+    @media (max-width: 1180px) {
+      .hero-header .hero__container {
+        grid-template-columns: minmax(360px, 0.87fr) minmax(470px, 1fr);
+        gap: 40px;
+        padding-right: 32px;
+        padding-left: 32px;
+      }
+
+      .hero-header .showcase__top,
+      .hero-header .showcase__bottom {
+        grid-template-columns: 175px minmax(0, 1fr);
+      }
+
+      .hero-header .browser__hero {
+        grid-template-columns: 1fr 140px;
+      }
+
+      .hero-header .features {
+        margin-top: 52px;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .hero-header {
+        overflow: visible;
+      }
+
+      .hero-header .hero__container {
+        min-height: auto;
+        padding: 38px 24px 110px;
+        grid-template-columns: 1fr;
+        gap: 62px;
+      }
+
+      .hero-header .hero__content {
+        max-width: 720px;
+      }
+
+      .hero-header .eyebrow {
+        margin-bottom: 30px;
+      }
+
+      .hero-header .hero__title {
+        max-width: 720px;
+      }
+
+      .hero-header .showcase {
+        max-width: 720px;
+        justify-self: center;
+      }
+
+    }
+
+    @media (max-width: 620px) {
+      .hero-header .hero__container {
+        padding-right: 18px;
+        padding-left: 18px;
+      }
+
+      .hero-header .hero__title {
+        font-size: clamp(43px, 13vw, 62px);
+      }
+
+      .hero-header .hero__description {
+        margin-top: 26px;
+        font-size: 17px;
+      }
+
+      .hero-header .hero__actions {
+        margin-top: 34px;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hero-header .button {
+        width: 100%;
+      }
+
+      .hero-header .features {
+        margin-top: 48px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 0;
+      }
+
+      .hero-header .feature:nth-child(2) {
+        border-right: 0;
+      }
+
+      .hero-header .feature:nth-child(3),
+      .hero-header .feature:nth-child(4) {
+        padding-top: 6px;
+      }
+
+      .hero-header .showcase {
+        padding: 21px 11px 11px;
+        border-radius: 13px;
+      }
+
+      .hero-header .showcase__label {
+        margin-bottom: 22px;
+      }
+
+      .hero-header .showcase__top,
+      .hero-header .showcase__bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-header .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-header .step {
+        min-height: 125px;
+      }
+
+      .hero-header .browser__content {
+        min-height: 285px;
+        padding: 34px 20px 20px;
+      }
+
+      .hero-header .browser__hero {
+        grid-template-columns: 1fr 120px;
+        gap: 16px;
+      }
+
+      .hero-header .browser__heading {
+        font-size: 21px;
+      }
+
+      .hero-header .image-placeholder {
+        height: 130px;
+      }
+
+      .hero-header .delivery {
+        min-height: 125px;
+      }
+
+      .hero-header .code-window {
+        min-height: 190px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero-header .eyebrow {
+        font-size: 9px;
+      }
+
+      .hero-header .hero__title {
+        font-size: 43px;
+      }
+
+      .hero-header .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-header .browser__hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-header .image-placeholder {
+        display: none;
+      }
+
+      .hero-header .browser__benefits {
+        gap: 8px;
+      }
+
+      .hero-header .browser-benefit__line {
+        width: 38px;
+      }
+
+      .hero-header .code {
+        font-size: 8px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1667,126 +2443,10 @@
     </header>
 
     <main>
-      <section class="hero" id="inicio">
-        <div class="container hero-grid">
-          <div class="hero-content reveal">
-            <div class="eyebrow">
-              <span class="eyebrow-dot"></span>
-              Menos reunião. Mais avanço.
-            </div>
-
-            <h1>
-              Sites profissionais.<br />
-              <span class="gradient-text">Sem enrolação.</span>
-            </h1>
-
-            <p class="hero-copy">
-              Briefing objetivo, execução refinada e uma entrega pensada para
-              funcionar sem depender de reuniões longas.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#contato">
-                Começar projeto <span class="arrow">→</span>
-              </a>
-              <a class="btn btn-secondary" href="#processo">
-                Ver processo <span class="arrow">→</span>
-              </a>
-            </div>
-
-            <div class="mini-benefits">
-              <span class="mini-benefit">
-                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5M10 13h5M10 17h5"/></svg></span>
-                Briefing claro
-              </span>
-              <span class="mini-benefit">
-                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m13 2-7 12h6l-1 8 7-12h-6z"/></svg></span>
-                Execução direta
-              </span>
-              <span class="mini-benefit">
-                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m8 5-6 7 6 7M16 5l6 7-6 7M14 3l-4 18"/></svg></span>
-                Refino técnico
-              </span>
-              <span class="mini-benefit">
-                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></span>
-                Entrega pronta
-              </span>
-            </div>
-          </div>
-
-          <div class="process-visual reveal" id="processo">
-            <span class="aurora-glow glow-one"></span>
-            <span class="aurora-glow glow-two"></span>
-            <span class="aurora-glow glow-three"></span>
-
-            <div class="process-board">
-              <div class="process-label">Como funciona</div>
-
-              <div class="process-layout">
-                <div class="process-steps">
-                  <article class="process-step-card">
-                    <span class="process-step-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5h6M9 3h6a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V5a2 2 0 0 1 2-2Z"/><path d="M8 11h8M8 15h6"/></svg>
-                    </span>
-                    <div><small>01</small><strong>Briefing</strong><p>Você envia o essencial. Eu alinho e estruturo.</p></div>
-                  </article>
-
-                  <article class="process-step-card">
-                    <span class="process-step-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5h6M9 3h6a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V5a2 2 0 0 1 2-2Z"/><path d="M8 11h8M8 15h6"/></svg>
-                    </span>
-                    <div><small>02</small><strong>Construção</strong><p>Desenvolvimento focado, sem rodeios.</p></div>
-                  </article>
-
-                  <article class="process-step-card">
-                    <span class="process-step-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5h6M9 3h6a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V5a2 2 0 0 1 2-2Z"/><path d="M8 11h8M8 15h6"/></svg>
-                    </span>
-                    <div><small>03</small><strong>Refino</strong><p>Ajustes objetivos para chegar no ponto certo.</p></div>
-                  </article>
-
-                  <article class="process-step-card">
-                    <span class="process-step-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>
-                    </span>
-                    <div><small>04</small><strong>Entrega</strong><p>Site pronto, rápido e fácil de manter.</p></div>
-                  </article>
-                </div>
-
-                <div class="process-showcase" aria-hidden="true">
-                  <div class="site-preview">
-                    <div class="site-preview-bar">
-                      <div class="site-preview-dots"><span></span><span></span><span></span></div>
-                      <div class="site-preview-nav"><span></span><span></span><span></span><span></span></div>
-                    </div>
-                    <div class="site-preview-hero">
-                      <div class="site-preview-copy"><h3>Soluções que movem negócios.</h3><span></span></div>
-                      <div class="site-preview-image"><span class="site-preview-sun"></span></div>
-                    </div>
-                    <div class="site-preview-features">
-                      <div class="site-preview-feature"><i>✓</i><span></span></div>
-                      <div class="site-preview-feature"><i>✓</i><span></span></div>
-                      <div class="site-preview-feature"><i>◇</i><span></span></div>
-                      <div class="site-preview-feature"><i>✓</i><span></span></div>
-                    </div>
-                  </div>
-
-                  <div class="code-preview">
-                    <div class="code-preview-head"><span>&lt;header class="site-header"&gt;</span><span class="code-status"></span></div>
-                    <span class="code-line">&lt;nav class="container"&gt;</span>
-                    <span class="code-line">&lt;a href="/" class="brand"&gt;Marca&lt;/a&gt;</span>
-                    <span class="code-line">&lt;button class="menu-toggle"&gt;</span>
-                    <span class="code-line">&lt;span&gt;&lt;/span&gt;</span>
-                    <span class="code-line">&lt;/button&gt;</span>
-                    <span class="code-line">&lt;/nav&gt;</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="glow-wave" aria-hidden="true">
+      <section class="hero hero-header" id="inicio">
+        <div class="ambient-glow ambient-glow--left"></div>
+        <div class="ambient-glow ambient-glow--right"></div>
+        <div class="hero-glow-wave" aria-hidden="true">
           <span class="glow-dot d1"></span>
           <span class="glow-dot d2"></span>
           <span class="glow-dot d3"></span>
@@ -1797,12 +2457,231 @@
           <span class="glow-dot d8"></span>
           <span class="glow-dot d9"></span>
 
-          <svg class="wave-cover" viewBox="0 0 1440 230" preserveAspectRatio="none">
+          <svg class="wave-cover" viewBox="0 0 1440 238" preserveAspectRatio="none">
             <path
-              d="M 0 145 C 310 225, 990 230, 1440 165 L 1440 230 L 0 230 Z"
-              fill="#f8f7f3"
+              d="M 0 72 C 310 173, 990 192, 1440 89 L 1440 238 L 0 238 Z"
+              fill="#f9f8f4"
             />
           </svg>
+        </div>
+
+        <div class="hero__container">
+          <section class="hero__content">
+            <div class="eyebrow">
+              <span class="eyebrow__dot"></span>
+              Menos reunião. Mais avanço.
+            </div>
+
+            <h1 class="hero__title">
+              <span class="hero__title-line">Sites profissionais.</span>
+              <span class="hero__title-line hero__title-gradient">Sem enrolação.</span>
+            </h1>
+
+            <p class="hero__description">
+              Briefing objetivo, execução refinada e uma entrega pensada para funcionar
+              sem depender de reuniões longas.
+            </p>
+
+            <div class="hero__actions">
+              <a href="#contato" class="button button--primary">
+                <span>Começar projeto</span>
+
+                <svg class="button__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12H19M14 7L19 12L14 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+
+              <a href="#processo" class="button button--secondary">
+                <span>Ver processo</span>
+
+                <svg class="button__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12H19M14 7L19 12L14 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+
+            <ul class="features">
+              <li class="feature">
+                <svg class="feature__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 3.5H14L18 7.5V20.5H7V3.5Z" stroke="currentColor" stroke-linejoin="round" />
+                  <path d="M14 3.5V8H18" stroke="currentColor" stroke-linejoin="round" />
+                </svg>
+                <span>Briefing claro</span>
+              </li>
+
+              <li class="feature">
+                <svg class="feature__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M13.5 2.5L6.5 13H11L9.8 21.5L17.5 10.5H13L13.5 2.5Z" stroke="currentColor" stroke-linejoin="round" />
+                </svg>
+                <span>Execução direta</span>
+              </li>
+
+              <li class="feature">
+                <svg class="feature__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 5L3 12L9 19M15 5L21 12L15 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Refino técnico</span>
+              </li>
+
+              <li class="feature">
+                <svg class="feature__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.5" stroke="currentColor" />
+                  <path d="M8.3 12L10.8 14.5L15.8 9.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Entrega pronta</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="showcase" id="processo">
+            <p class="showcase__label">Como funciona</p>
+
+            <div class="showcase__top">
+              <div class="steps">
+                <article class="step">
+                  <div class="step__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <rect x="5" y="4" width="13" height="16" rx="2" stroke="currentColor" stroke-width="1.4" />
+                      <path d="M9 8H14M9 11H15M9 14H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="step__number">01</div>
+                    <div class="step__title">Briefing</div>
+                    <div class="step__text">Você envia o essencial.<br>Eu alinho e estruturo.</div>
+                  </div>
+                </article>
+
+                <article class="step">
+                  <div class="step__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <rect x="5" y="4" width="13" height="16" rx="2" stroke="currentColor" stroke-width="1.4" />
+                      <path d="M9 8H14M9 11H15M9 14H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="step__number">02</div>
+                    <div class="step__title">Construção</div>
+                    <div class="step__text">Desenvolvimento<br>focado, sem rodeios.</div>
+                  </div>
+                </article>
+
+                <article class="step">
+                  <div class="step__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <rect x="5" y="4" width="13" height="16" rx="2" stroke="currentColor" stroke-width="1.4" />
+                      <path d="M9 8H14M9 11H15M9 14H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="step__number">03</div>
+                    <div class="step__title">Refino</div>
+                    <div class="step__text">Ajustes objetivos para<br>chegar no ponto certo.</div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="browser">
+                <div class="browser__bar">
+                  <span class="browser__dot"></span>
+                  <span class="browser__dot"></span>
+                  <span class="browser__dot"></span>
+
+                  <div class="browser__nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+
+                <div class="browser__content">
+                  <div class="browser__hero">
+                    <div>
+                      <h2 class="browser__heading">Soluções que<br>movem negócios.</h2>
+                      <div class="browser__fake-button"></div>
+                    </div>
+
+                    <div class="image-placeholder">
+                      <span class="image-placeholder__sun"></span>
+                      <span class="image-placeholder__mountain"></span>
+                      <span class="image-placeholder__mountain image-placeholder__mountain--small"></span>
+                    </div>
+                  </div>
+
+                  <div class="browser__benefits">
+                    <div class="browser-benefit">
+                      <div class="browser-benefit__icon">✓</div>
+                      <div class="browser-benefit__line"></div>
+                      <div class="browser-benefit__line"></div>
+                    </div>
+
+                    <div class="browser-benefit">
+                      <div class="browser-benefit__icon">✓</div>
+                      <div class="browser-benefit__line"></div>
+                      <div class="browser-benefit__line"></div>
+                    </div>
+
+                    <div class="browser-benefit">
+                      <div class="browser-benefit__icon">◇</div>
+                      <div class="browser-benefit__line"></div>
+                      <div class="browser-benefit__line"></div>
+                    </div>
+
+                    <div class="browser-benefit">
+                      <div class="browser-benefit__icon">✓</div>
+                      <div class="browser-benefit__line"></div>
+                      <div class="browser-benefit__line"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase__bottom">
+              <article class="delivery">
+                <div class="step__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.4" />
+                    <path d="M8.5 12L10.8 14.3L15.5 9.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+
+                <div>
+                  <div class="step__number">04</div>
+                  <div class="step__title">Entrega</div>
+                  <div class="step__text">Site pronto, rápido e<br>fácil de manter.</div>
+                </div>
+              </article>
+
+              <div class="code-window">
+                <div class="code-window__top">
+                  <span>HTML</span>
+                  <span class="code-window__status"></span>
+                </div>
+
+                <div class="code">
+                  <div class="code__numbers">01
+02
+03
+04
+05
+06
+07
+08</div>
+
+                  <div class="code__content"><span class="code__tag">&lt;header</span> <span class="code__attribute">class=</span><span class="code__value">"site-header"</span><span class="code__tag">&gt;</span>
+  <span class="code__tag">&lt;nav</span> <span class="code__attribute">class=</span><span class="code__value">"container"</span><span class="code__tag">&gt;</span>
+    <span class="code__tag">&lt;a</span> <span class="code__attribute">href=</span><span class="code__value">"/"</span> <span class="code__attribute">class=</span><span class="code__value">"brand"</span><span class="code__tag">&gt;</span><span class="code__text">Marca</span><span class="code__tag">&lt;/a&gt;</span>
+    <span class="code__tag">&lt;button</span> <span class="code__attribute">class=</span><span class="code__value">"menu-toggle"</span><span class="code__tag">&gt;</span>
+      <span class="code__tag">&lt;span&gt;</span><span class="code__text">Menu</span><span class="code__tag">&lt;/span&gt;</span>
+    <span class="code__tag">&lt;/button&gt;</span>
+  <span class="code__tag">&lt;/nav&gt;</span>
+<span class="code__tag">&lt;/header&gt;</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 
