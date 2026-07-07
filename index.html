@@ -258,8 +258,8 @@
     /* Hero */
     .hero {
       @apply relative isolate block overflow-hidden;
-      min-height: 600px;
-      padding: 44px 0 95px;
+      min-height: 640px;
+      padding: 24px 0 112px;
     }
 
     .hero-content {
@@ -280,10 +280,10 @@
     }
 
     .hero-grid {
-      @apply grid items-center;
+      @apply grid items-start;
       width: min(calc(100% - 50px), 1230px);
-      grid-template-columns: minmax(0, 0.82fr) minmax(400px, 1.18fr);
-      gap: 48px;
+      grid-template-columns: minmax(0, 0.9fr) minmax(500px, 1.1fr);
+      gap: 52px;
     }
 
     .eyebrow {
@@ -299,6 +299,19 @@
       letter-spacing: 0.06em;
     }
 
+    .hero .eyebrow {
+      margin-bottom: 38px;
+      padding: 6px 10px;
+      font-size: 0.64rem;
+    }
+
+    .hero .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      background: #262b38;
+      box-shadow: none;
+    }
+
     .eyebrow-dot {
       width: 7px;
       height: 7px;
@@ -310,8 +323,8 @@
     .hero h1 {
       max-width: none;
       margin: 0;
-      font-size: clamp(2.5rem, 4.6vw, 4.7rem);
-      line-height: 1.08;
+      font-size: clamp(2.5rem, 4.6vw, 4.45rem);
+      line-height: 1.03;
       letter-spacing: -0.055em;
       white-space: nowrap;
     }
@@ -344,29 +357,31 @@
     }
 
     .hero-copy {
-      max-width: 500px;
-      margin: 28px 0 0;
+      max-width: 410px;
+      margin: 34px 0 0;
       color: var(--muted);
-      font-size: clamp(0.92rem, 1.25vw, 1.08rem);
+      font-size: clamp(0.92rem, 1.18vw, 1.04rem);
+      line-height: 1.65;
     }
 
     .hero-actions {
       @apply flex flex-wrap;
       gap: 10px;
-      margin-top: 30px;
+      margin-top: 34px;
     }
 
     .hero-actions .btn {
-      min-height: 42px;
-      padding-inline: 16px;
-      border-radius: 7px;
+      min-width: 174px;
+      min-height: 49px;
+      padding-inline: 21px;
+      border-radius: 6px;
       font-size: 0.78rem;
     }
 
     .mini-benefits {
       @apply grid grid-cols-4;
       gap: 0;
-      margin-top: 46px;
+      margin-top: 58px;
       color: #606575;
       font-size: 0.68rem;
     }
@@ -390,10 +405,16 @@
       background: transparent;
     }
 
+    .mini-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
     /* Painel à direita */
     .process-visual {
       @apply relative;
-      min-height: 430px;
+      min-height: 520px;
+      margin-top: -16px;
     }
 
     .aurora-glow {
@@ -427,13 +448,13 @@
 
     .process-board {
       @apply relative overflow-hidden border backdrop-blur-[18px];
-      min-height: 430px;
-      padding: 18px;
+      min-height: 520px;
+      padding: 24px 18px 14px;
       border: 1px solid rgba(36, 39, 60, 0.10);
-      border-radius: 22px;
+      border-radius: 14px;
       background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(249, 249, 252, 0.72));
-      box-shadow: var(--shadow);
+      box-shadow: 0 24px 65px rgba(35, 31, 57, 0.09);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
@@ -569,6 +590,274 @@
       @apply h-3 w-[23px] rounded-full;
       background: linear-gradient(90deg, #8d6aff, #ca75da);
       box-shadow: inset -8px 0 rgba(255, 255, 255, 0.65);
+    }
+
+    /* Composição do painel do processo */
+    .process-label {
+      @apply relative z-[1] font-semibold;
+      margin: 0 0 18px 2px;
+      color: #687080;
+      font-size: 0.7rem;
+    }
+
+    .process-layout {
+      @apply relative z-[1] grid items-stretch;
+      grid-template-columns: 146px minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .process-steps {
+      @apply grid;
+      grid-template-rows: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .process-step-card {
+      @apply flex items-start border;
+      min-height: 82px;
+      gap: 9px;
+      padding: 11px 9px;
+      border-color: rgba(38, 43, 62, 0.10);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 6px 18px rgba(33, 31, 49, 0.025);
+    }
+
+    .process-step-icon {
+      @apply grid size-7 shrink-0 place-items-center rounded-full border;
+      border-color: rgba(47, 54, 76, 0.13);
+      color: #596273;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .process-step-icon svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .process-step-card small {
+      display: block;
+      color: #777d8b;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .process-step-card strong {
+      display: block;
+      margin-top: 1px;
+      color: #272b37;
+      font-size: 0.72rem;
+      line-height: 1.2;
+    }
+
+    .process-step-card p {
+      margin: 4px 0 0;
+      color: #747987;
+      font-size: 0.56rem;
+      line-height: 1.35;
+    }
+
+    .process-showcase {
+      @apply grid min-w-0;
+      grid-template-rows: 266px 156px;
+      gap: 17px;
+    }
+
+    .site-preview {
+      @apply overflow-hidden border bg-white;
+      border-color: rgba(34, 38, 55, 0.09);
+      border-radius: 10px;
+      box-shadow: 0 12px 28px rgba(33, 30, 49, 0.05);
+    }
+
+    .site-preview-bar {
+      @apply flex items-center;
+      height: 31px;
+      padding: 0 12px;
+      background: #f2f0ed;
+    }
+
+    .site-preview-dots {
+      @apply flex gap-[5px];
+    }
+
+    .site-preview-dots span {
+      @apply size-[6px] rounded-full;
+      background: #cfd1d6;
+    }
+
+    .site-preview-nav {
+      @apply ml-auto flex gap-4;
+    }
+
+    .site-preview-nav span {
+      width: 24px;
+      height: 2px;
+      border-radius: 999px;
+      background: #bfc2c9;
+    }
+
+    .site-preview-hero {
+      @apply grid items-center;
+      height: 169px;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding: 18px 22px;
+    }
+
+    .site-preview-copy h3 {
+      max-width: 150px;
+      margin: 0;
+      color: #252936;
+      font-size: 1.05rem;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .site-preview-copy span {
+      display: block;
+      width: 64px;
+      height: 18px;
+      margin-top: 20px;
+      border-radius: 3px;
+      background: #1d222c;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+
+    .site-preview-copy span::after {
+      content: "";
+      display: block;
+      width: 33px;
+      height: 2px;
+      margin: 8px 0 0 10px;
+      background: rgba(255,255,255,.5);
+    }
+
+    .site-preview-image {
+      @apply relative overflow-hidden rounded-md;
+      height: 112px;
+      background: #f0efef;
+    }
+
+    .site-preview-image::before,
+    .site-preview-image::after {
+      content: "";
+      position: absolute;
+      bottom: 18px;
+      background: #d9d9dc;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
+
+    .site-preview-image::before {
+      left: 12px;
+      width: 72px;
+      height: 72px;
+    }
+
+    .site-preview-image::after {
+      right: 7px;
+      width: 60px;
+      height: 52px;
+    }
+
+    .site-preview-sun {
+      @apply absolute size-5 rounded-full;
+      top: 14px;
+      right: 18px;
+      background: #d9d9dc;
+    }
+
+    .site-preview-features {
+      @apply grid grid-cols-4;
+      height: 66px;
+      gap: 14px;
+      padding: 6px 22px 14px;
+    }
+
+    .site-preview-feature {
+      @apply flex flex-col items-center gap-2;
+    }
+
+    .site-preview-feature i {
+      @apply grid size-5 place-items-center rounded-full border;
+      border-color: #dfe1e5;
+      color: #c5c9d0;
+      font-size: 0.58rem;
+      font-style: normal;
+    }
+
+    .site-preview-feature span,
+    .site-preview-feature span::after {
+      display: block;
+      height: 3px;
+      border-radius: 999px;
+      background: #e7e7e8;
+    }
+
+    .site-preview-feature span {
+      width: 48px;
+    }
+
+    .site-preview-feature span::after {
+      content: "";
+      width: 34px;
+      margin-top: 6px;
+    }
+
+    .code-preview {
+      @apply relative overflow-hidden border;
+      padding: 15px 16px 14px 39px;
+      border-color: rgba(255, 255, 255, 0.08);
+      border-radius: 9px;
+      color: #d8dfed;
+      background:
+        radial-gradient(circle at 92% 10%, rgba(71, 210, 151, 0.16), transparent 22%),
+        linear-gradient(145deg, #202633, #10151e);
+      box-shadow: 0 12px 28px rgba(18, 20, 29, 0.16);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.55rem;
+      line-height: 1.55;
+    }
+
+    .code-preview::before {
+      content: "01\A 02\A 03\A 04\A 05\A 06\A 07";
+      white-space: pre;
+      position: absolute;
+      top: 15px;
+      left: 12px;
+      color: #646d7c;
+    }
+
+    .code-preview-head {
+      @apply flex items-center justify-between;
+      margin-bottom: 6px;
+      color: #8d95a3;
+      font-size: 0.5rem;
+    }
+
+    .code-status {
+      @apply size-[5px] rounded-full;
+      background: #63d5a0;
+      box-shadow: 0 0 8px rgba(99, 213, 160, 0.55);
+    }
+
+    .code-line {
+      display: block;
+      white-space: nowrap;
+      color: #d5a86f;
+    }
+
+    .code-line:nth-child(3),
+    .code-line:nth-child(5) {
+      padding-left: 14px;
+      color: #8fb0d6;
+    }
+
+    .code-line:nth-child(4),
+    .code-line:nth-child(6) {
+      padding-left: 28px;
+      color: #c58cc5;
     }
 
 
@@ -1262,11 +1551,51 @@
       }
 
       .process-visual {
-        min-height: 430px;
+        min-height: 0;
+        margin-top: 0;
       }
 
       .process-board {
-        min-height: 430px;
+        min-height: 0;
+        padding: 18px 14px 14px;
+      }
+
+      .process-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, 1fr);
+      }
+
+      .process-step-card {
+        min-height: 104px;
+      }
+
+      .process-showcase {
+        grid-template-rows: 236px 145px;
+        margin-top: 4px;
+      }
+
+      .site-preview-hero {
+        height: 143px;
+        padding-inline: 15px;
+      }
+
+      .site-preview-features {
+        height: 62px;
+        gap: 7px;
+        padding-inline: 12px;
+      }
+
+      .site-preview-feature span {
+        width: 38px;
+      }
+
+      .code-preview {
+        padding-right: 9px;
+        font-size: 0.48rem;
       }
 
       .board-grid {
@@ -1367,19 +1696,19 @@
 
             <div class="mini-benefits">
               <span class="mini-benefit">
-                <span class="mini-icon">▱</span>
+                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5M10 13h5M10 17h5"/></svg></span>
                 Briefing claro
               </span>
               <span class="mini-benefit">
-                <span class="mini-icon">ϟ</span>
+                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m13 2-7 12h6l-1 8 7-12h-6z"/></svg></span>
                 Execução direta
               </span>
               <span class="mini-benefit">
-                <span class="mini-icon">&lt;/&gt;</span>
+                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m8 5-6 7 6 7M16 5l6 7-6 7M14 3l-4 18"/></svg></span>
                 Refino técnico
               </span>
               <span class="mini-benefit">
-                <span class="mini-icon">✓</span>
+                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></span>
                 Entrega pronta
               </span>
             </div>
@@ -1391,70 +1720,65 @@
             <span class="aurora-glow glow-three"></span>
 
             <div class="process-board">
-              <div class="board-grid">
-                <div class="timeline" aria-hidden="true">
-                  <span class="step-dot">1</span>
-                  <span class="step-dot">2</span>
-                  <span class="step-dot">3</span>
-                  <span class="step-dot">4</span>
+              <div class="process-label">Como funciona</div>
+
+              <div class="process-layout">
+                <div class="process-steps">
+                  <article class="process-step-card">
+                    <span class="process-step-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5h6M9 3h6a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V5a2 2 0 0 1 2-2Z"/><path d="M8 11h8M8 15h6"/></svg>
+                    </span>
+                    <div><small>01</small><strong>Briefing</strong><p>Você envia o essencial. Eu alinho e estruturo.</p></div>
+                  </article>
+
+                  <article class="process-step-card">
+                    <span class="process-step-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5h6M9 3h6a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V5a2 2 0 0 1 2-2Z"/><path d="M8 11h8M8 15h6"/></svg>
+                    </span>
+                    <div><small>02</small><strong>Construção</strong><p>Desenvolvimento focado, sem rodeios.</p></div>
+                  </article>
+
+                  <article class="process-step-card">
+                    <span class="process-step-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5h6M9 3h6a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V5a2 2 0 0 1 2-2Z"/><path d="M8 11h8M8 15h6"/></svg>
+                    </span>
+                    <div><small>03</small><strong>Refino</strong><p>Ajustes objetivos para chegar no ponto certo.</p></div>
+                  </article>
+
+                  <article class="process-step-card">
+                    <span class="process-step-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+                    </span>
+                    <div><small>04</small><strong>Entrega</strong><p>Site pronto, rápido e fácil de manter.</p></div>
+                  </article>
                 </div>
 
-                <div>
-                  <div class="step-copy">
-                    <span class="step-number">01</span>
-                    <strong>Briefing claro</strong>
-                    <span>Informações essenciais e objetivos alinhados.</span>
-                  </div>
-
-                  <div class="step-copy">
-                    <span class="step-number">02</span>
-                    <strong>Execução direta</strong>
-                    <span>Desenvolvimento focado, sem ruído.</span>
-                  </div>
-
-                  <div class="step-copy">
-                    <span class="step-number">03</span>
-                    <strong>Refino técnico</strong>
-                    <span>Ajustes precisos e qualidade.</span>
-                  </div>
-
-                  <div class="step-copy">
-                    <span class="step-number">04</span>
-                    <strong>Entrega pronta</strong>
-                    <span>Site testado e preparado.</span>
-                  </div>
-                </div>
-
-                <div class="mock-stack">
-                  <div class="mock-card card">
-                    <div class="mock-title">Briefing</div>
-                    <div class="line w-90"></div>
-                    <div class="line w-64"></div>
-                    <div class="line w-74"></div>
-                  </div>
-
-                  <div class="mock-card card code">
-                    <div class="mock-title">&lt;header class="site-header"&gt;</div>
-                    <div class="line w-90"></div>
-                    <div class="line w-74"></div>
-                    <div class="line w-64"></div>
-                    <div class="line w-48"></div>
-                  </div>
-
-                  <div class="mock-card card">
-                    <div class="mock-title">Refinamento</div>
-                    <div class="line w-74"></div>
-                    <div class="line w-48"></div>
-                    <div class="switches">
-                      <span class="switch"></span>
-                      <span class="switch"></span>
+                <div class="process-showcase" aria-hidden="true">
+                  <div class="site-preview">
+                    <div class="site-preview-bar">
+                      <div class="site-preview-dots"><span></span><span></span><span></span></div>
+                      <div class="site-preview-nav"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="site-preview-hero">
+                      <div class="site-preview-copy"><h3>Soluções que movem negócios.</h3><span></span></div>
+                      <div class="site-preview-image"><span class="site-preview-sun"></span></div>
+                    </div>
+                    <div class="site-preview-features">
+                      <div class="site-preview-feature"><i>✓</i><span></span></div>
+                      <div class="site-preview-feature"><i>✓</i><span></span></div>
+                      <div class="site-preview-feature"><i>◇</i><span></span></div>
+                      <div class="site-preview-feature"><i>✓</i><span></span></div>
                     </div>
                   </div>
 
-                  <div class="mock-card card">
-                    <div class="mock-title">Lançamento</div>
-                    <div class="line w-64"></div>
-                    <div class="line w-36"></div>
+                  <div class="code-preview">
+                    <div class="code-preview-head"><span>&lt;header class="site-header"&gt;</span><span class="code-status"></span></div>
+                    <span class="code-line">&lt;nav class="container"&gt;</span>
+                    <span class="code-line">&lt;a href="/" class="brand"&gt;Marca&lt;/a&gt;</span>
+                    <span class="code-line">&lt;button class="menu-toggle"&gt;</span>
+                    <span class="code-line">&lt;span&gt;&lt;/span&gt;</span>
+                    <span class="code-line">&lt;/button&gt;</span>
+                    <span class="code-line">&lt;/nav&gt;</span>
                   </div>
                 </div>
               </div>
@@ -1475,7 +1799,7 @@
 
           <svg class="wave-cover" viewBox="0 0 1440 230" preserveAspectRatio="none">
             <path
-              d="M 0 65 C 310 166, 990 185, 1440 82 L 1440 230 L 0 230 Z"
+              d="M 0 145 C 310 225, 990 230, 1440 165 L 1440 230 L 0 230 Z"
               fill="#f8f7f3"
             />
           </svg>
