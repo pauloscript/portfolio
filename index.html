@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Landing page demonstrativa com aurora gradient, mesh gradient, glassmorphism e faixas curvas."
+    content="Paulo Henrique - Analista de Sistemas e Consultor de Tecnologia."
   />
   <title>Paulo Henrique - Analista de Sistemas e Consultor de Tecnologia</title>
 
@@ -1947,7 +1947,7 @@
       min-height: 96px;
       padding: 17px 15px;
       display: grid;
-      grid-template-columns: 27px 1fr;
+      grid-template-columns: 42px 1fr;
       align-items: flex-start;
       justify-items: start;
       gap: 13px;
@@ -1967,11 +1967,35 @@
     }
 
     .hero-header .step__icon {
-      width: 25px;
-      height: 25px;
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
-      color: #525c69;
+      border: 1px solid rgba(86, 76, 142, 0.10);
+      border-radius: 12px;
+      color: #7969df;
+      background: linear-gradient(135deg, rgba(121, 105, 255, 0.13), rgba(255, 255, 255, 0.8));
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .hero-header .step__icon--code {
+      color: #9a6bd8;
+      background: linear-gradient(135deg, rgba(170, 108, 223, 0.13), rgba(255, 255, 255, 0.8));
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .hero-header .step__icon--refine {
+      color: #d16faa;
+      background: linear-gradient(135deg, rgba(226, 121, 184, 0.13), rgba(255, 255, 255, 0.8));
+      font-size: 16px;
+    }
+
+    .hero-header .step__icon--delivery {
+      color: #f09a2b;
+      background: linear-gradient(135deg, rgba(255, 178, 77, 0.16), rgba(255, 255, 255, 0.8));
+      font-size: 14px;
     }
 
     .hero-header .step__number {
@@ -2155,7 +2179,7 @@
       min-height: 215px;
       padding: 20px 15px;
       display: grid;
-      grid-template-columns: 28px 1fr;
+      grid-template-columns: 42px 1fr;
       align-content: start;
       gap: 13px;
       border: 1px solid #e6e3df;
@@ -2540,10 +2564,7 @@
               <div class="steps">
                 <article class="step">
                   <div class="step__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <rect x="5" y="4" width="13" height="16" rx="2" stroke="currentColor" stroke-width="1.4" />
-                      <path d="M9 8H14M9 11H15M9 14H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
-                    </svg>
+                    <span aria-hidden="true">&#9636;</span>
                   </div>
                   <div>
                     <div class="step__number">01</div>
@@ -2553,11 +2574,8 @@
                 </article>
 
                 <article class="step">
-                  <div class="step__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <rect x="5" y="4" width="13" height="16" rx="2" stroke="currentColor" stroke-width="1.4" />
-                      <path d="M9 8H14M9 11H15M9 14H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
-                    </svg>
+                  <div class="step__icon step__icon--code">
+                    <span aria-hidden="true">&lt;/&gt;</span>
                   </div>
                   <div>
                     <div class="step__number">02</div>
@@ -2567,11 +2585,8 @@
                 </article>
 
                 <article class="step">
-                  <div class="step__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <rect x="5" y="4" width="13" height="16" rx="2" stroke="currentColor" stroke-width="1.4" />
-                      <path d="M9 8H14M9 11H15M9 14H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
-                    </svg>
+                  <div class="step__icon step__icon--refine">
+                    <span aria-hidden="true">&#8984;</span>
                   </div>
                   <div>
                     <div class="step__number">03</div>
@@ -2640,11 +2655,8 @@
 
             <div class="showcase__bottom">
               <article class="delivery">
-                <div class="step__icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.4" />
-                    <path d="M8.5 12L10.8 14.3L15.5 9.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
+                <div class="step__icon step__icon--delivery">
+                  <span aria-hidden="true">&#10003;</span>
                 </div>
 
                 <div>
